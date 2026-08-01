@@ -1,6 +1,6 @@
-<p align="center">
-  <img src="assets/banner.png" alt="Validator Kit Banner">
-</p>
+<img
+src="https://raw.githubusercontent.com/Dev-SohelRana/validator_kit/main/assets/banner.png"
+alt="Validator Kit Banner">
 
 <h1 align="center">Validator Kit</h1>
 
@@ -18,9 +18,9 @@ A lightweight, reusable, customizable and null-safe Flutter form validation pack
 
 ---
 
-<p align="center">
-  <img src="assets/logo.png" width="220">
-</p>
+<img
+src="https://raw.githubusercontent.com/Dev-SohelRana/validator_kit/main/assets/logo.png"
+width="180">
 
 ## ✨ Features
 
@@ -46,17 +46,18 @@ A lightweight, reusable, customizable and null-safe Flutter form validation pack
 
 # 📱 Preview
 
-<p align="center">
-  <img src="assets/preview.png" width="360">
-</p>
+<img
+src="https://raw.githubusercontent.com/Dev-SohelRana/validator_kit/main/assets/preview.png"
+width="900">
 
 ---
 
 ## 🎬 Demo
 
-<p align="center">
-  <img src="assets/demo.gif" width="800" alt="Validator Kit Demo">
-</p>
+<img
+src="https://raw.githubusercontent.com/Dev-SohelRana/validator_kit/main/assets/demo.gif"
+width="900">
+
 ---
 
 # 📦 Installation
