@@ -22,4 +22,20 @@ class ValidationMessages {
   static String min(num value) => 'Must be at least $value.';
 
   static String max(num value) => 'Must not exceed $value.';
+
+  static String passwordMinLength(int length) =>
+      'Password must be at least $length characters.';
+
+  static const passwordUppercase = 'Password must contain an uppercase letter.';
+
+  static const passwordLowercase = 'Password must contain a lowercase letter.';
+
+  static const passwordNumber = 'Password must contain a number.';
+
+  static const passwordSpecialCharacter =
+      'Password must contain a special character.';
+
+  static const passwordMismatch = 'Passwords do not match.';
+
+  static const invalidPattern = 'Invalid format.';
 }

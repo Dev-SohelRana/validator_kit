@@ -1,3 +1,6 @@
+import 'package:validator_kit/src/core/regex_patterns.dart';
+import 'package:validator_kit/src/core/validation_messages.dart';
+
 import '../core/validation_types.dart';
 
 Validator passwordValidator({
@@ -14,26 +17,25 @@ Validator passwordValidator({
     }
 
     final password = value.trim();
-
     if (password.length < minLength) {
-      return message ?? 'Password must be at least $minLength characters.';
+      return message ?? ValidationMessages.passwordMinLength(minLength);
     }
 
-    if (uppercase && !RegExp(r'[A-Z]').hasMatch(password)) {
-      return message ?? 'Password must contain an uppercase letter.';
+    if (uppercase && !RegexPatterns.uppercase.hasMatch(password)) {
+      return message ?? ValidationMessages.passwordUppercase;
     }
 
-    if (lowercase && !RegExp(r'[a-z]').hasMatch(password)) {
-      return message ?? 'Password must contain a lowercase letter.';
+    if (lowercase && !RegexPatterns.lowercase.hasMatch(password)) {
+      return message ?? ValidationMessages.passwordLowercase;
     }
 
-    if (number && !RegExp(r'[0-9]').hasMatch(password)) {
-      return message ?? 'Password must contain a number.';
+    if (number && !RegexPatterns.number.hasMatch(password)) {
+      return message ?? ValidationMessages.passwordNumber;
     }
 
     if (specialCharacter &&
-        !RegExp(r'[!@#\$%^&*(),.?":{}|<>]').hasMatch(password)) {
-      return message ?? 'Password must contain a special character.';
+        !RegexPatterns.specialCharacter.hasMatch(password)) {
+      return message ?? ValidationMessages.passwordSpecialCharacter;
     }
 
     return null;

@@ -1,3 +1,5 @@
+import 'package:validator_kit/src/core/validation_messages.dart';
+
 import '../core/validation_types.dart';
 
 Validator confirmPasswordValidator(
@@ -10,9 +12,8 @@ Validator confirmPasswordValidator(
     }
 
     if (value != passwordProvider()) {
-      return message ?? 'Passwords do not match.';
+      return message ?? ValidationMessages.passwordMismatch;
     }
-
     return null;
   };
 }

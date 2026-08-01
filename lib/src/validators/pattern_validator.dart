@@ -1,3 +1,5 @@
+import 'package:validator_kit/src/core/validation_messages.dart';
+
 import '../core/validation_types.dart';
 
 Validator patternValidator(
@@ -10,7 +12,7 @@ Validator patternValidator(
     }
 
     if (!pattern.hasMatch(value.trim())) {
-      return message ?? 'Invalid format.';
+      return message ?? ValidationMessages.invalidPattern;
     }
 
     return null;
