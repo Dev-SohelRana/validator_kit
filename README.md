@@ -52,12 +52,11 @@ A lightweight, reusable, customizable and null-safe Flutter form validation pack
 
 ---
 
-# 🎬 Demo
+## 🎬 Demo
 
 <p align="center">
-  <img src="assets/demo.gif">
+  <img src="assets/demo.gif" width="800" alt="Validator Kit Demo">
 </p>
-
 ---
 
 # 📦 Installation
