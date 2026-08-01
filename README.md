@@ -295,6 +295,15 @@ If you like this package, please give it a ⭐ on GitHub.
 It helps the project grow and motivates future improvements.
 
 ---
+## 🤝 Connect with Me
+
+If this package helps you, feel free to connect.
+
+- 💻 GitHub: https://github.com/Dev-SohelRana
+- 💼 LinkedIn: https://www.linkedin.com/in/mdsohelrana201/
+- 🌐 Portfolio: https://dev-sohelrana.github.io/sohelrana-portfolio/
+
+---
 
 # 📄 License
 
