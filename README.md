@@ -1,13 +1,26 @@
-# Validator Kit
+<p align="center">
+  <img src="assets/banner.png" alt="Validator Kit Banner">
+</p>
 
-A lightweight, reusable, and customizable Flutter form validation package for Flutter.
+<h1 align="center">Validator Kit</h1>
 
-Validator Kit helps you build clean and maintainable forms with minimal code while providing customizable validation messages.
+<p align="center">
+A lightweight, reusable, customizable and null-safe Flutter form validation package.
+</p>
+
+<p align="center">
 
 [![pub package](https://img.shields.io/pub/v/validator_kit.svg)](https://pub.dev/packages/validator_kit)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Flutter](https://img.shields.io/badge/Flutter-Compatible-blue.svg)](https://flutter.dev)
+
+</p>
 
 ---
+
+<p align="center">
+  <img src="assets/logo.png" width="220">
+</p>
 
 ## ✨ Features
 
@@ -23,17 +36,33 @@ Validator Kit helps you build clean and maintainable forms with minimal code whi
 - ✅ Minimum Length Validator
 - ✅ Maximum Length Validator
 - ✅ Combine Multiple Validators
-- ✅ Disable Validation (`ValidatorKit.none()`)
 - ✅ Custom Error Messages
-- ✅ Lightweight
+- ✅ Fully Null-safe
+- ✅ Lightweight & Fast
 - ✅ Easy to Use
-- ✅ Null Safe
+- ✅ Reusable Across Projects
+
+---
+
+# 📱 Preview
+
+<p align="center">
+  <img src="assets/preview.png" width="360">
+</p>
+
+---
+
+# 🎬 Demo
+
+<p align="center">
+  <img src="assets/demo.gif">
+</p>
 
 ---
 
 # 📦 Installation
 
-Add the dependency to your `pubspec.yaml`.
+Add the package to your **pubspec.yaml**
 
 ```yaml
 dependencies:
@@ -56,7 +85,7 @@ import 'package:validator_kit/validator_kit.dart';
 
 ---
 
-# Basic Example
+# ⚡ Quick Start
 
 ```dart
 TextFormField(
@@ -69,7 +98,7 @@ TextFormField(
 
 ---
 
-# Available Validators
+# 📚 Available Validators
 
 ## Required
 
@@ -77,11 +106,15 @@ TextFormField(
 ValidatorKit.required()
 ```
 
+---
+
 ## Email
 
 ```dart
 ValidatorKit.email()
 ```
+
+---
 
 ## Phone
 
@@ -89,11 +122,15 @@ ValidatorKit.email()
 ValidatorKit.phone()
 ```
 
+---
+
 ## URL
 
 ```dart
 ValidatorKit.url()
 ```
+
+---
 
 ## Username
 
@@ -101,17 +138,15 @@ ValidatorKit.url()
 ValidatorKit.username()
 ```
 
-## Number
-
-```dart
-ValidatorKit.number()
-```
+---
 
 ## Password
 
 ```dart
 ValidatorKit.password()
 ```
+
+---
 
 ## Confirm Password
 
@@ -120,6 +155,16 @@ ValidatorKit.confirmPassword(
   () => passwordController.text,
 )
 ```
+
+---
+
+## Number
+
+```dart
+ValidatorKit.number()
+```
+
+---
 
 ## Pattern
 
@@ -130,11 +175,15 @@ ValidatorKit.pattern(
 )
 ```
 
+---
+
 ## Minimum Length
 
 ```dart
 ValidatorKit.minLength(8)
 ```
+
+---
 
 ## Maximum Length
 
@@ -142,23 +191,9 @@ ValidatorKit.minLength(8)
 ValidatorKit.maxLength(30)
 ```
 
-## Disable Validation
-
-```dart
-ValidatorKit.none()
-```
-
-Useful when validation should be skipped conditionally.
-
-```dart
-validator: isRequired
-    ? ValidatorKit.required()
-    : ValidatorKit.none(),
-```
-
 ---
 
-# Combine Multiple Validators
+## Combine Validators
 
 ```dart
 validator: ValidatorKit.combine([
@@ -170,20 +205,41 @@ validator: ValidatorKit.combine([
 
 ---
 
-# Custom Error Message
+## Disable Validation
+
+If you want to disable validation conditionally:
+
+```dart
+ValidatorKit.none()
+```
+
+Example
+
+```dart
+validator: isGuest
+    ? ValidatorKit.none()
+    : ValidatorKit.required(),
+```
+
+---
+
+## Custom Error Message
 
 ```dart
 ValidatorKit.email(
-  message: 'Please enter a valid email address.',
+  message: 'Please enter a valid email.',
 )
 ```
 
 ---
 
-# Complete Example
+# 💻 Complete Example
 
 ```dart
 TextFormField(
+  decoration: const InputDecoration(
+    labelText: 'Email',
+  ),
   validator: ValidatorKit.combine([
     ValidatorKit.required(),
     ValidatorKit.email(),
@@ -194,30 +250,52 @@ TextFormField(
 
 ---
 
-# Roadmap
+# ❤️ Why Validator Kit?
+
+- Clean API
+- Highly reusable
+- Easy to combine validators
+- Supports custom error messages
+- Null-safe
+- Lightweight
+- Production ready
+- Perfect for Flutter Forms
+
+---
+
+# 🛣️ Roadmap
 
 Upcoming features
 
 - 🌍 Localization Support
 - 📅 Date Validator
 - 💳 Credit Card Validator
-- 🌐 IP Address Validator
-- 🔐 OTP Validator
-- 🔢 PIN Validator
-- 📱 Country-specific Phone Validator
-- ⚡ Async Validators
-- 🌎 Country-specific Validation Rules
+- 🌐 IPv4 & IPv6 Validator
+- 🆔 IBAN Validator
+- 🏳 Country-specific Phone Validation
+- ⏳ Async Validators
+- 🔥 Custom Validator Builder
+- 📝 File Validator
+- 📦 OTP Validator
 
 ---
 
-# Contributing
+# 🤝 Contributing
 
-Contributions, feature requests, and bug reports are always welcome.
+Contributions are welcome!
 
-If you have an idea that can improve Validator Kit, feel free to open an issue or submit a pull request.
+If you'd like to improve Validator Kit, feel free to open an issue or submit a pull request.
 
 ---
 
-# License
+# ⭐ Support
 
-MIT License
+If you like this package, please give it a ⭐ on GitHub.
+
+It helps the project grow and motivates future improvements.
+
+---
+
+# 📄 License
+
+This project is licensed under the MIT License.
