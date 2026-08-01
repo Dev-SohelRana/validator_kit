@@ -13,3 +13,9 @@
 - Min/Max Length validator
 - Combine validators
 - Custom error messages
+
+## 0.0.2
+
+- Fixed README image rendering on pub.dev
+- Optimized image sizes
+- Improved package documentation
