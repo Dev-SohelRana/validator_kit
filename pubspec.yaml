@@ -1,8 +1,16 @@
 name: validator_kit
 description: A lightweight, reusable, and extensible Flutter form validation package.
 version: 0.0.1
-homepage:
+homepage: https://github.com/Dev-SohelRana/validator_kit
+repository: https://github.com/Dev-SohelRana/validator_kit
+issue_tracker: https://github.com/Dev-SohelRana/validator_kit/issues
 
+topics:
+  - validation
+  - flutter
+  - forms
+  - validator
+  
 environment:
   sdk: ">=3.0.0 <4.0.0"
 

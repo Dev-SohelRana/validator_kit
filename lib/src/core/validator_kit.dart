@@ -14,6 +14,17 @@ import '../validators/username_validator.dart';
 import 'validation_messages.dart';
 import 'validation_types.dart';
 
+/// A lightweight, reusable and customizable Flutter form validation package.
+///
+/// Example:
+/// ```dart
+/// TextFormField(
+///   validator: ValidatorKit.combine([
+///     ValidatorKit.required(),
+///     ValidatorKit.email(),
+///   ]),
+/// )
+/// ```
 class ValidatorKit {
   ValidatorKit._();
 
