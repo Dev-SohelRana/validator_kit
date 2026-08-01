@@ -2,21 +2,22 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:validator_kit/validator_kit.dart';
 
 void main() {
-  group('Validators.maxLength', () {
+  group('ValidatorKit.maxLength', () {
     test('returns an error above the maximum length', () {
-      expect(Validators.maxLength(4)('five!'), 'Must not exceed 4 characters.');
+      expect(
+          ValidatorKit.maxLength(4)('five!'), 'Must not exceed 4 characters.');
     });
 
     test('accepts values at or below the maximum length', () {
-      final validator = Validators.maxLength(4);
+      final validator = ValidatorKit.maxLength(4);
 
       expect(validator('four'), isNull);
       expect(validator('fit'), isNull);
     });
 
     test('uses a custom error message', () {
-      expect(
-          Validators.maxLength(4, message: 'Too long.')('five!'), 'Too long.');
+      expect(ValidatorKit.maxLength(4, message: 'Too long.')('five!'),
+          'Too long.');
     });
   });
 }

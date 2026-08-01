@@ -2,9 +2,9 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:validator_kit/validator_kit.dart';
 
 void main() {
-  group('Validators.required', () {
+  group('ValidatorKit.required', () {
     test('returns an error for null, empty, and whitespace-only values', () {
-      final validator = Validators.required();
+      final validator = ValidatorKit.required();
 
       expect(validator(null), 'This field is required.');
       expect(validator(''), 'This field is required.');
@@ -12,11 +12,11 @@ void main() {
     });
 
     test('accepts a non-empty value', () {
-      expect(Validators.required()('Jane'), isNull);
+      expect(ValidatorKit.required()('Jane'), isNull);
     });
 
     test('uses a custom error message', () {
-      expect(Validators.required(message: 'Name is required.')(''),
+      expect(ValidatorKit.required(message: 'Name is required.')(''),
           'Name is required.');
     });
   });

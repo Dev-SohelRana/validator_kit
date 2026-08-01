@@ -39,35 +39,35 @@ class _DemoPageState extends State<DemoPage> {
               children: [
                 TextFormField(
                   decoration: const InputDecoration(labelText: 'Email'),
-                  validator: Validators.combine([
-                    Validators.required(),
-                    Validators.email(),
-                    Validators.minLength(8),
+                  validator: ValidatorKit.combine([
+                    ValidatorKit.required(),
+                    ValidatorKit.email(),
+                    ValidatorKit.minLength(8),
                   ]),
                 ),
                 const SizedBox(height: 20),
                 TextFormField(
                   decoration: const InputDecoration(labelText: 'Website'),
-                  validator: Validators.combine([
-                    Validators.required(),
-                    Validators.url(),
+                  validator: ValidatorKit.combine([
+                    ValidatorKit.required(),
+                    ValidatorKit.url(),
                   ]),
                 ),
                 const SizedBox(height: 20),
                 TextFormField(
                   decoration: const InputDecoration(labelText: 'Phone'),
                   keyboardType: TextInputType.phone,
-                  validator: Validators.combine([
-                    Validators.required(),
-                    Validators.phone(),
+                  validator: ValidatorKit.combine([
+                    ValidatorKit.required(),
+                    ValidatorKit.phone(),
                   ]),
                 ),
                 const SizedBox(height: 20),
                 TextFormField(
                   decoration: const InputDecoration(labelText: 'Employee ID'),
-                  validator: Validators.combine([
-                    Validators.required(),
-                    Validators.pattern(
+                  validator: ValidatorKit.combine([
+                    ValidatorKit.required(),
+                    ValidatorKit.pattern(
                       RegExp(r'^[A-Z]{3}[0-9]{4}$'),
                       message: 'Invalid Employee ID',
                     ),
@@ -76,9 +76,9 @@ class _DemoPageState extends State<DemoPage> {
                 const SizedBox(height: 20),
                 TextFormField(
                   decoration: const InputDecoration(labelText: 'Username'),
-                  validator: Validators.combine([
-                    Validators.required(),
-                    Validators.username(),
+                  validator: ValidatorKit.combine([
+                    ValidatorKit.required(),
+                    ValidatorKit.username(),
                   ]),
                 ),
                 const SizedBox(height: 20),
@@ -86,9 +86,9 @@ class _DemoPageState extends State<DemoPage> {
                   controller: passwordController,
                   obscureText: true,
                   decoration: const InputDecoration(labelText: 'Password'),
-                  validator: Validators.combine([
-                    Validators.required(),
-                    Validators.password(() => passwordController.text),
+                  validator: ValidatorKit.combine([
+                    ValidatorKit.required(),
+                    ValidatorKit.password(),
                   ]),
                 ),
 
@@ -100,9 +100,9 @@ class _DemoPageState extends State<DemoPage> {
                   decoration: const InputDecoration(
                     labelText: 'Confirm Password',
                   ),
-                  validator: Validators.combine([
-                    Validators.required(),
-                    Validators.confirmPassword(() => passwordController.text),
+                  validator: ValidatorKit.combine([
+                    ValidatorKit.required(),
+                    ValidatorKit.confirmPassword(() => passwordController.text),
                   ]),
                 ),
                 const SizedBox(height: 20),
@@ -128,7 +128,7 @@ class _DemoPageState extends State<DemoPage> {
 
 // void main() {
 //   group('Required Validator', () {
-//     final validator = Validators.required();
+//     final validator = ValidatorKit.required();
 
 //     test('null value', () {
 //       expect(validator(null), 'This field is required.');

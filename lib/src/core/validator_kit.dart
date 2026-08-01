@@ -1,32 +1,37 @@
-import 'package:validator_kit/src/validators/combine_validator.dart';
-import 'package:validator_kit/src/validators/confirm_password_validator.dart';
-import 'package:validator_kit/src/validators/max_length_validator.dart';
-import 'package:validator_kit/src/validators/min_length_validator.dart';
-import 'package:validator_kit/src/validators/number_validator.dart';
-import 'package:validator_kit/src/validators/password_validator.dart';
-import 'package:validator_kit/src/validators/pattern_validator.dart';
-import 'package:validator_kit/src/validators/phone_validator.dart';
-import 'package:validator_kit/src/validators/url_validator.dart';
-import 'package:validator_kit/src/validators/username_validator.dart';
-
+import '../validators/combine_validator.dart';
+import '../validators/confirm_password_validator.dart';
 import '../validators/email_validator.dart';
+import '../validators/max_length_validator.dart';
+import '../validators/min_length_validator.dart';
+import '../validators/number_validator.dart';
+import '../validators/password_validator.dart';
+import '../validators/pattern_validator.dart';
+import '../validators/phone_validator.dart';
 import '../validators/required_validator.dart';
+import '../validators/url_validator.dart';
+import '../validators/username_validator.dart';
+
+import 'validation_messages.dart';
 import 'validation_types.dart';
 
-class Validators {
-  Validators._();
+class ValidatorKit {
+  ValidatorKit._();
+
+  static Validator none() {
+    return (_) => null;
+  }
 
   static Validator combine(List<Validator> validators) {
     return combineValidators(validators);
   }
 
   static Validator required({
-    String message = 'This field is required.',
+    String message = ValidationMessages.required,
   }) =>
       requiredValidator(message: message);
 
   static Validator email({
-    String message = 'Please enter a valid email address.',
+    String message = ValidationMessages.invalidEmail,
   }) =>
       emailValidator(message: message);
 
@@ -58,8 +63,7 @@ class Validators {
     );
   }
 
-  static Validator password(
-    String Function() param0, {
+  static Validator password({
     int minLength = 8,
     bool uppercase = true,
     bool lowercase = true,
@@ -86,7 +90,7 @@ class Validators {
   }
 
   static Validator phone({
-    String? message,
+    String message = ValidationMessages.invalidPhone,
   }) {
     return phoneValidator(
       message: message,
