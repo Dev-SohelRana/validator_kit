@@ -66,7 +66,7 @@ Add the package to your **pubspec.yaml**
 
 ```yaml
 dependencies:
-  validator_kit: ^1.0.0
+  validator_kit: ^0.0.1
 ```
 
 Then run
