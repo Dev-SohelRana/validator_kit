@@ -121,29 +121,3 @@ class _DemoPageState extends State<DemoPage> {
     );
   }
 }
-
-// import 'package:flutter_test/flutter_test.dart';
-// // ignore: depend_on_referenced_packages
-// import 'package:validator_kit/validator_kit.dart';
-
-// void main() {
-//   group('Required Validator', () {
-//     final validator = ValidatorKit.required();
-
-//     test('null value', () {
-//       expect(validator(null), 'This field is required.');
-//     });
-
-//     test('empty string', () {
-//       expect(validator(''), 'This field is required.');
-//     });
-
-//     test('spaces only', () {
-//       expect(validator('   '), 'This field is required.');
-//     });
-
-//     test('valid text', () {
-//       expect(validator('Sohel'), null);
-//     });
-//   });
-// }
