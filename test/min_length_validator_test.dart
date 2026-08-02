@@ -5,7 +5,9 @@ void main() {
   group('ValidatorKit.minLength', () {
     test('returns an error below the minimum length', () {
       expect(
-          ValidatorKit.minLength(5)('four'), 'Must be at least 5 characters.');
+        ValidatorKit.minLength(5)('four'),
+        'Must be at least 5 characters.',
+      );
     });
 
     test('accepts values at or above the minimum length', () {

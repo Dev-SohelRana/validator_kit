@@ -5,7 +5,9 @@ void main() {
   group('ValidatorKit.maxLength', () {
     test('returns an error above the maximum length', () {
       expect(
-          ValidatorKit.maxLength(4)('five!'), 'Must not exceed 4 characters.');
+        ValidatorKit.maxLength(4)('five!'),
+        'Must not exceed 4 characters.',
+      );
     });
 
     test('accepts values at or below the maximum length', () {
@@ -16,8 +18,10 @@ void main() {
     });
 
     test('uses a custom error message', () {
-      expect(ValidatorKit.maxLength(4, message: 'Too long.')('five!'),
-          'Too long.');
+      expect(
+        ValidatorKit.maxLength(4, message: 'Too long.')('five!'),
+        'Too long.',
+      );
     });
   });
 }

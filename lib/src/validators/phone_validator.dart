@@ -2,9 +2,7 @@ import '../core/regex_patterns.dart';
 import '../core/validation_messages.dart';
 import '../core/validation_types.dart';
 
-Validator phoneValidator({
-  String? message,
-}) {
+Validator phoneValidator({String? message}) {
   return (String? value) {
     if (value == null || value.trim().isEmpty) {
       return null;

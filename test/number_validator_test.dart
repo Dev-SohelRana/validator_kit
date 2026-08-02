@@ -17,8 +17,10 @@ void main() {
 
     test('allows an empty value and supports a custom message', () {
       expect(ValidatorKit.number()('  '), isNull);
-      expect(ValidatorKit.number(message: 'Enter a number.')('abc'),
-          'Enter a number.');
+      expect(
+        ValidatorKit.number(message: 'Enter a number.')('abc'),
+        'Enter a number.',
+      );
     });
   });
 }

@@ -34,3 +34,29 @@
 - Improved code readability.
 - Improved validation messages.
 - Updated examples.
+
+## 0.0.4
+
+### Added
+
+- Length validator
+- Min value validator
+- Max value validator
+- Range validator
+- Contains validator
+- StartsWith validator
+- EndsWith validator
+- Equal validator
+- NotEqual validator
+- Credit Card validator
+- Date validator
+- Standalone validation helpers (isEmail, etc.)
+- Better API documentation
+
+### Improved
+
+- README redesigned
+- Better examples
+- Better SEO for pub.dev
+- Improved package documentation
+- Improved demo and preview images

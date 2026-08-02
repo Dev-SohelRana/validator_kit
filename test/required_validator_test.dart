@@ -16,8 +16,10 @@ void main() {
     });
 
     test('uses a custom error message', () {
-      expect(ValidatorKit.required(message: 'Name is required.')(''),
-          'Name is required.');
+      expect(
+        ValidatorKit.required(message: 'Name is required.')(''),
+        'Name is required.',
+      );
     });
   });
 }
