@@ -60,3 +60,14 @@
 - Better SEO for pub.dev
 - Improved package documentation
 - Improved demo and preview images
+
+
+## 0.0.5
+
+### Improved
+
+- README redesigned
+- Better examples
+- Better SEO for pub.dev
+- Improved package documentation
+- Improved demo and preview images

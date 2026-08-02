@@ -80,7 +80,7 @@ Add the package to your **pubspec.yaml**
 
 ```yaml
 dependencies:
-  validator_kit: 0.0.4
+  validator_kit: 0.0.5
 ```
 
 or install directly from pub.dev.
