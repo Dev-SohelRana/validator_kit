@@ -197,6 +197,33 @@ ValidatorKit.maxLength(30)
 
 ---
 
+## Minimum Number
+
+```dart
+ValidatorKit.min(18)
+```
+
+---
+
+## Maximum Number
+
+```dart
+ValidatorKit.max(100)
+```
+
+---
+
+## Range Number
+
+```dart
+ValidatorKit.range(
+  min: 18,
+  max: 60,
+)
+```
+
+---
+
 ## Combine Validators
 
 ```dart

@@ -10,6 +10,9 @@ import '../validators/phone_validator.dart';
 import '../validators/required_validator.dart';
 import '../validators/url_validator.dart';
 import '../validators/username_validator.dart';
+import '../validators/min_validator.dart';
+import '../validators/max_validator.dart';
+import '../validators/range_validator.dart';
 
 import 'validation_messages.dart';
 import 'validation_types.dart';
@@ -221,5 +224,48 @@ class ValidatorKit {
     String? message,
   }) {
     return confirmPasswordValidator(passwordProvider, message: message);
+  }
+
+  /// Returns a validator that checks whether
+  /// the entered number is greater than or equal to [value].
+  ///
+  /// Example:
+  ///
+  /// ```dart
+  /// ValidatorKit.min(18)
+  /// ```
+  static Validator min(num value, {String? message}) {
+    return minValidator(value, message: message);
+  }
+
+  /// Returns a validator that checks whether
+  /// the entered number is less than or equal to [value].
+  ///
+  /// Example:
+  ///
+  /// ```dart
+  /// ValidatorKit.max(100)
+  /// ```
+  static Validator max(num value, {String? message}) {
+    return maxValidator(value, message: message);
+  }
+
+  /// Returns a validator that checks whether
+  /// the entered number is between [min] and [max].
+  ///
+  /// Example:
+  ///
+  /// ```dart
+  /// ValidatorKit.range(
+  ///   min: 18,
+  ///   max: 60,
+  /// )
+  /// ```
+  static Validator range({
+    required num min,
+    required num max,
+    String? message,
+  }) {
+    return rangeValidator(min: min, max: max, message: message);
   }
 }

@@ -106,6 +106,33 @@ class _DemoPageState extends State<DemoPage> {
                   ]),
                 ),
                 const SizedBox(height: 20),
+                TextFormField(
+                  decoration: const InputDecoration(labelText: 'Age'),
+                  keyboardType: TextInputType.number,
+                  validator: ValidatorKit.combine([
+                    ValidatorKit.required(),
+                    ValidatorKit.min(18),
+                  ]),
+                ),
+                const SizedBox(height: 20),
+                TextFormField(
+                  decoration: const InputDecoration(labelText: 'Score'),
+                  keyboardType: TextInputType.number,
+                  validator: ValidatorKit.combine([
+                    ValidatorKit.required(),
+                    ValidatorKit.max(100),
+                  ]),
+                ),
+                const SizedBox(height: 20),
+                TextFormField(
+                  decoration: const InputDecoration(labelText: 'Age'),
+                  keyboardType: TextInputType.number,
+                  validator: ValidatorKit.combine([
+                    ValidatorKit.required(),
+                    ValidatorKit.range(min: 18, max: 60),
+                  ]),
+                ),
+                const SizedBox(height: 20),
 
                 ElevatedButton(
                   onPressed: () {

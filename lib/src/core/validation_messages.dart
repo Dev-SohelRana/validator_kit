@@ -60,4 +60,6 @@ class ValidationMessages {
 
   /// Error message for invalid pattern matching.
   static const invalidPattern = 'Invalid format.';
+
+  static String range(num min, num max) => 'Must be between $min and $max.';
 }
