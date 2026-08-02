@@ -1,8 +1,13 @@
 import '../validators/combine_validator.dart';
 import '../validators/confirm_password_validator.dart';
+import '../validators/date_validator.dart';
 import '../validators/email_validator.dart';
+import '../validators/ends_with_validator.dart';
+import '../validators/equal_validator.dart';
+import '../validators/length_validator.dart';
 import '../validators/max_length_validator.dart';
 import '../validators/min_length_validator.dart';
+import '../validators/not_equal_validator.dart';
 import '../validators/number_validator.dart';
 import '../validators/password_validator.dart';
 import '../validators/pattern_validator.dart';
@@ -13,6 +18,9 @@ import '../validators/username_validator.dart';
 import '../validators/min_validator.dart';
 import '../validators/max_validator.dart';
 import '../validators/range_validator.dart';
+import '../validators/contains_validator.dart';
+import '../validators/starts_with_validator.dart';
+import '../validators/credit_card_validator.dart';
 
 import 'validation_messages.dart';
 import 'validation_types.dart';
@@ -267,5 +275,209 @@ class ValidatorKit {
     String? message,
   }) {
     return rangeValidator(min: min, max: max, message: message);
+  }
+
+  /// Returns a validator that checks whether
+  /// the input contains the specified [text].
+  ///
+  /// Example:
+  ///
+  /// ```dart
+  /// ValidatorKit.contains('@')
+  /// ```
+  static Validator contains(
+    String text, {
+    bool caseSensitive = true,
+    String? message,
+  }) {
+    return containsValidator(
+      text,
+      caseSensitive: caseSensitive,
+      message: message,
+    );
+  }
+
+  /// Returns a validator that checks whether
+  /// the input starts with the specified [text].
+  ///
+  /// Example:
+  ///
+  /// ```dart
+  /// ValidatorKit.startsWith('Mr.')
+  /// ```
+  static Validator startsWith(
+    String text, {
+    bool caseSensitive = true,
+    String? message,
+  }) {
+    return startsWithValidator(
+      text,
+      caseSensitive: caseSensitive,
+      message: message,
+    );
+  }
+
+  /// Returns a validator that checks whether
+  /// the input ends with the specified [text].
+  ///
+  /// Example:
+  ///
+  /// ```dart
+  /// ValidatorKit.endsWith('.com')
+  /// ```
+  static Validator endsWith(
+    String text, {
+    bool caseSensitive = true,
+    String? message,
+  }) {
+    return endsWithValidator(
+      text,
+      caseSensitive: caseSensitive,
+      message: message,
+    );
+  }
+
+  /// Returns a validator that checks whether
+  /// the input is equal to the specified [value].
+  ///
+  /// Example:
+  ///
+  /// ```dart
+  /// ValidatorKit.equal('Flutter')
+  /// ```
+  static Validator equal(
+    String value, {
+    bool caseSensitive = true,
+    String? message,
+  }) {
+    return equalValidator(
+      value,
+      caseSensitive: caseSensitive,
+      message: message,
+    );
+  }
+
+  /// Returns a validator that checks whether
+  /// the input is NOT equal to the specified [value].
+  ///
+  /// Example:
+  ///
+  /// ```dart
+  /// ValidatorKit.notEqual('admin')
+  /// ```
+  static Validator notEqual(
+    String value, {
+    bool caseSensitive = true,
+    String? message,
+  }) {
+    return notEqualValidator(
+      value,
+      caseSensitive: caseSensitive,
+      message: message,
+    );
+  }
+
+  /// Returns a validator that checks whether
+  /// the input length is between [min] and [max].
+  ///
+  /// Example:
+  ///
+  /// ```dart
+  /// ValidatorKit.length(
+  ///   min: 8,
+  ///   max: 20,
+  /// )
+  /// ```
+  static Validator length({
+    required int min,
+    required int max,
+    String? message,
+  }) {
+    return lengthValidator(min: min, max: max, message: message);
+  }
+
+  /// Returns a validator that checks whether
+  /// the input is a valid credit card number.
+  ///
+  /// Supports Visa, MasterCard, American Express,
+  /// Discover and other cards using the Luhn algorithm.
+  ///
+  /// Example:
+  ///
+  /// ```dart
+  /// ValidatorKit.creditCard()
+  /// ```
+  static Validator creditCard({
+    String message = ValidationMessages.invalidCreditCard,
+  }) {
+    return creditCardValidator(message: message);
+  }
+
+  /// Returns a validator that checks whether
+  /// the input is a valid date.
+  ///
+  /// Supported formats:
+  /// - yyyy-MM-dd
+  /// - dd/MM/yyyy
+  /// - MM/dd/yyyy
+  /// - dd-MM-yyyy
+  /// - MM-dd-yyyy
+  ///
+  /// Example:
+  ///
+  /// ```dart
+  /// ValidatorKit.date()
+  /// ```
+  static Validator date({
+    List<String> formats = const [
+      'yyyy-MM-dd',
+      'dd/MM/yyyy',
+      'MM/dd/yyyy',
+      'dd-MM-yyyy',
+      'MM-dd-yyyy',
+    ],
+    String message = ValidationMessages.invalidDate,
+  }) {
+    return dateValidator(formats: formats, message: message);
+  }
+
+  /// Returns true if the value is a valid email.
+  static bool isEmail(String? value) {
+    return email()(value) == null;
+  }
+
+  /// Returns true if the value is a valid phone number.
+  static bool isPhone(String? value) {
+    return phone()(value) == null;
+  }
+
+  /// Returns true if the value is a valid URL.
+  static bool isUrl(String? value) {
+    return url()(value) == null;
+  }
+
+  /// Returns true if the value is a valid username.
+  static bool isUsername(String? value) {
+    return username()(value) == null;
+  }
+
+  /// Returns true if the value is numeric.
+  static bool isNumber(String? value) {
+    return number()(value) == null;
+  }
+
+  /// Returns true if the value is a valid credit card.
+  static bool isCreditCard(String? value) {
+    return creditCard()(value) == null;
+  }
+
+  /// Returns true if the value is a valid date.
+  static bool isDate(String? value) {
+    return date()(value) == null;
+  }
+
+  /// Returns true if the value is a valid password.
+  static bool isPassword(String? value) {
+    return password()(value) == null;
   }
 }

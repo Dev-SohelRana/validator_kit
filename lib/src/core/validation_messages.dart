@@ -32,6 +32,9 @@ class ValidationMessages {
   /// Returns an error message for maximum length validation.
   static String maxLength(int value) => 'Must not exceed $value characters.';
 
+  static String length(int min, int max) =>
+      'Must be between $min and $max characters.';
+
   /// Returns an error message for minimum numeric value validation.
   static String min(num value) => 'Must be at least $value.';
 
@@ -62,4 +65,18 @@ class ValidationMessages {
   static const invalidPattern = 'Invalid format.';
 
   static String range(num min, num max) => 'Must be between $min and $max.';
+
+  static String contains(String text) => 'Must contain "$text".';
+
+  static String startsWith(String text) => 'Must start with "$text".';
+
+  static String endsWith(String text) => 'Must end with "$text".';
+
+  static String equal(String value) => 'Must be equal to "$value".';
+
+  static String notEqual(String value) => 'Value cannot be "$value".';
+
+  static const invalidCreditCard = 'Please enter a valid credit card number.';
+
+  static const invalidDate = 'Please enter a valid date.';
 }

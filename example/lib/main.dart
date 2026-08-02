@@ -62,17 +62,7 @@ class _DemoPageState extends State<DemoPage> {
                     ValidatorKit.phone(),
                   ]),
                 ),
-                const SizedBox(height: 20),
-                TextFormField(
-                  decoration: const InputDecoration(labelText: 'Employee ID'),
-                  validator: ValidatorKit.combine([
-                    ValidatorKit.required(),
-                    ValidatorKit.pattern(
-                      RegExp(r'^[A-Z]{3}[0-9]{4}$'),
-                      message: 'Invalid Employee ID',
-                    ),
-                  ]),
-                ),
+
                 const SizedBox(height: 20),
                 TextFormField(
                   decoration: const InputDecoration(labelText: 'Username'),
@@ -125,11 +115,64 @@ class _DemoPageState extends State<DemoPage> {
                 ),
                 const SizedBox(height: 20),
                 TextFormField(
-                  decoration: const InputDecoration(labelText: 'Age'),
+                  decoration: const InputDecoration(labelText: 'Age Range'),
                   keyboardType: TextInputType.number,
                   validator: ValidatorKit.combine([
                     ValidatorKit.required(),
                     ValidatorKit.range(min: 18, max: 60),
+                  ]),
+                ),
+                const SizedBox(height: 20),
+                TextFormField(
+                  decoration: const InputDecoration(labelText: 'Bio'),
+                  validator: ValidatorKit.combine([
+                    ValidatorKit.required(),
+                    ValidatorKit.contains('Flutter'),
+                  ]),
+                ),
+                const SizedBox(height: 20),
+                TextFormField(
+                  decoration: const InputDecoration(labelText: 'Name'),
+                  validator: ValidatorKit.combine([
+                    ValidatorKit.required(),
+                    ValidatorKit.startsWith('Mr.'),
+                  ]),
+                ),
+
+                const SizedBox(height: 20),
+                TextFormField(
+                  decoration: const InputDecoration(labelText: 'Framework'),
+                  validator: ValidatorKit.combine([
+                    ValidatorKit.required(),
+                    ValidatorKit.equal('Flutter'),
+                  ]),
+                ),
+
+                const SizedBox(height: 20),
+                TextFormField(
+                  decoration: const InputDecoration(
+                    labelText: 'Username Length',
+                  ),
+                  validator: ValidatorKit.combine([
+                    ValidatorKit.required(),
+                    ValidatorKit.length(min: 5, max: 20),
+                  ]),
+                ),
+                const SizedBox(height: 20),
+                TextFormField(
+                  decoration: const InputDecoration(labelText: 'Credit Card'),
+                  keyboardType: TextInputType.number,
+                  validator: ValidatorKit.combine([
+                    ValidatorKit.required(),
+                    ValidatorKit.creditCard(),
+                  ]),
+                ),
+                const SizedBox(height: 20),
+                TextFormField(
+                  decoration: const InputDecoration(labelText: 'Date of Birth'),
+                  validator: ValidatorKit.combine([
+                    ValidatorKit.required(),
+                    ValidatorKit.date(),
                   ]),
                 ),
                 const SizedBox(height: 20),

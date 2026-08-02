@@ -37,14 +37,24 @@ width="180">
 - ✅ Confirm Password Validator
 - ✅ Number Validator
 - ✅ Pattern Validator
+- ✅ Date Validator
+- ✅ Credit Card Validator
+- ✅ Minimum Value Validator
+- ✅ Maximum Value Validator
+- ✅ Range Validator
 - ✅ Minimum Length Validator
 - ✅ Maximum Length Validator
+- ✅ Fixed Length Validator
+- ✅ Contains Validator
+- ✅ Starts With Validator
+- ✅ Ends With Validator
+- ✅ Equal Validator
+- ✅ Not Equal Validator
 - ✅ Combine Multiple Validators
+- ✅ Validate Without TextFormField
 - ✅ Custom Error Messages
-- ✅ Fully Null-safe
+- ✅ Null-safe
 - ✅ Lightweight & Fast
-- ✅ Easy to Use
-- ✅ Reusable Across Projects
 
 ---
 
@@ -70,8 +80,10 @@ Add the package to your **pubspec.yaml**
 
 ```yaml
 dependencies:
-  validator_kit: ^0.0.1
+  validator_kit: latest_version
 ```
+
+or install directly from pub.dev.
 
 Then run
 
@@ -128,14 +140,6 @@ ValidatorKit.phone()
 
 ---
 
-## URL
-
-```dart
-ValidatorKit.url()
-```
-
----
-
 ## Username
 
 ```dart
@@ -162,37 +166,19 @@ ValidatorKit.confirmPassword(
 
 ---
 
+
+## URL
+
+```dart
+ValidatorKit.url()
+```
+
+---
+
 ## Number
 
 ```dart
 ValidatorKit.number()
-```
-
----
-
-## Pattern
-
-```dart
-ValidatorKit.pattern(
-  RegExp(r'^[A-Z]{3}[0-9]{4}$'),
-  message: 'Invalid Employee ID',
-)
-```
-
----
-
-## Minimum Length
-
-```dart
-ValidatorKit.minLength(8)
-```
-
----
-
-## Maximum Length
-
-```dart
-ValidatorKit.maxLength(30)
 ```
 
 ---
@@ -220,6 +206,176 @@ ValidatorKit.range(
   min: 18,
   max: 60,
 )
+```
+
+---
+
+## Length
+
+```dart
+ValidatorKit.length(
+  min: 5,
+  max: 20,
+)
+```
+
+Example:
+
+```dart
+validator: ValidatorKit.combine([
+  ValidatorKit.required(),
+  ValidatorKit.length(
+    min: 5,
+    max: 20,
+  ),
+])
+```
+
+---
+
+## Minimum Length
+
+```dart
+ValidatorKit.minLength(8)
+```
+
+---
+
+## Maximum Length
+
+```dart
+ValidatorKit.maxLength(30)
+```
+
+---
+
+## Contains
+
+```dart
+ValidatorKit.contains('Flutter')
+```
+
+Example:
+
+```dart
+validator: ValidatorKit.combine([
+  ValidatorKit.required(),
+  ValidatorKit.contains('Flutter'),
+])
+```
+
+---
+
+## Starts With
+
+```dart
+ValidatorKit.startsWith('Mr.')
+```
+
+Example:
+
+```dart
+validator: ValidatorKit.combine([
+  ValidatorKit.required(),
+  ValidatorKit.startsWith('Mr.'),
+])
+```
+
+---
+
+## Ends With
+
+```dart
+ValidatorKit.endsWith('.com')
+```
+
+Example:
+
+```dart
+validator: ValidatorKit.combine([
+  ValidatorKit.required(),
+  ValidatorKit.endsWith('.com'),
+])
+```
+
+---
+
+## Equal
+
+```dart
+ValidatorKit.equal('Flutter')
+```
+
+Example:
+
+```dart
+validator: ValidatorKit.combine([
+  ValidatorKit.required(),
+  ValidatorKit.equal('Flutter'),
+])
+```
+
+---
+
+## Not Equal
+
+```dart
+ValidatorKit.notEqual('admin')
+```
+
+Example:
+
+```dart
+validator: ValidatorKit.combine([
+  ValidatorKit.required(),
+  ValidatorKit.notEqual('admin'),
+])
+```
+
+---
+
+
+## Pattern
+
+```dart
+ValidatorKit.pattern(
+  RegExp(r'^[A-Z]{2,5}-\d{4}-\d{4}$'),
+  message: 'Enter a valid Employee ID',
+)
+```
+
+---
+
+## Credit Card
+
+```dart
+ValidatorKit.creditCard()
+```
+
+Example:
+
+```dart
+validator: ValidatorKit.combine([
+  ValidatorKit.required(),
+  ValidatorKit.creditCard(),
+])
+```
+
+---
+
+## Date
+
+```dart
+ValidatorKit.date()
+```
+
+Example:
+
+```dart
+validator: ValidatorKit.combine([
+  ValidatorKit.required(),
+  ValidatorKit.date(),
+])
 ```
 
 ---
@@ -300,20 +456,19 @@ Whether you need an **email validator**, **password validator**, **phone validat
 - 💙 Production ready
 ---
 
-# 🛣️ Roadmap
+## 🛣️ Roadmap
 
-Upcoming features
-
-- 🌍 Localization Support
-- 📅 Date Validator
-- 💳 Credit Card Validator
-- 🌐 IPv4 & IPv6 Validator
+- 🌍 Localization
+- 🌐 IPv4 Validator
+- 🌐 IPv6 Validator
 - 🆔 IBAN Validator
-- 🏳 Country-specific Phone Validation
-- ⏳ Async Validators
-- 🔥 Custom Validator Builder
-- 📝 File Validator
-- 📦 OTP Validator
+- 🪪 UUID Validator
+- 📍 Latitude & Longitude Validator
+- 📦 File Validator
+- 📅 Time Validator
+- 🔥 Async Validators
+- ⚙️ Validator Builder
+- 🌎 Multi-language Error Messages
 
 ---
 
@@ -336,8 +491,10 @@ It helps the project grow and motivates future improvements.
 
 If this package helps you, feel free to connect.
 
-- 💻 GitHub: https://github.com/Dev-SohelRana
-- 💼 LinkedIn: https://www.linkedin.com/in/mdsohelrana201/
+- 💻 GitHub: [Dev-SohelRana](https://github.com/Dev-SohelRana)
+
+- 💼 LinkedIn: [Md. Sohel Rana](https://www.linkedin.com/in/mdsohelrana201/)
+
 - 🌐 Portfolio: https://dev-sohelrana.github.io/sohelrana-portfolio/
 
 ---
